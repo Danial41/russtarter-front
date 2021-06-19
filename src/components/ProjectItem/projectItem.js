@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 const ProjectItem = (props) => {
 
-    const {image, option, user, name, id} = props
+    const {image, user, name, id} = props
 
     return (
         <div className='project-wrapper'>
@@ -13,7 +13,6 @@ const ProjectItem = (props) => {
                 <span id='project-name'>{name}</span>
                 <img id='project-pic' src={image} />
                 <div className='description-wrapper'>
-                    <div>Отрасль: {option}</div>
                     <div>Автор: {user}</div>
                 </div>
             </Link>

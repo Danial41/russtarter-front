@@ -7,42 +7,42 @@ import {URL, LOCAL_URL} from '../../utils/url.helper'
 
 const ProjectCreationPage = (props) => {
 
-    const [option, setOption] = useState('космос');
     const [image, setImage] = useState();
-    const [name, setName] = useState();
+    const [title, setTitle] = useState();
     const [description, setDescription] = useState();
     const [warning, setWarning] = useState();
+    const [totalSum, setTotalSum] = useState();
+
+    console.log(image);
 
     const createProjectHandler = (e) => {
         e.preventDefault()
 
-        console.log(image, option, description);
-
         const formData = new FormData();
-        if (option) formData.append('option', option.toLowerCase());
         if (image) formData.append('image', image);
-        if (props.user) formData.append('user', props.user.id)
-        if (name) formData.append('name', name)
-        if (description) formData.append('description', description)
+        if (title) formData.append('title', title);
+        if (description) formData.append('description', description);
+        if (totalSum) formData.append('total_sum', totalSum);
 
-        fetch(`${URL}projects`, {
+        fetch(`${URL}/projects`, {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: {
+              Authorization: 'Bearer ' + props.user.token,
+            }
         })
         .then(response => response.json())
         .then(data => {
-          if (data.error) {
+          if (data.message) {
             setWarning(data.message)
           } else {
             props.history.push('./projects')
-            console.log(data);
           }
         })
         .catch(err => console.log(err));
     }
 
     const clearFields = () => {
-        setOption();
         setImage();
     }
 
@@ -51,11 +51,6 @@ const ProjectCreationPage = (props) => {
           let img = event.target.files[0];
           setImage(img);
         }
-    };
-
-    const handleChange = (event) => {
-        const { value } = event.target;
-        setOption(value);
     };
 
     return (
@@ -75,8 +70,8 @@ const ProjectCreationPage = (props) => {
                             type="text"
                             className="form-control"
                             placeholder="Назовите проект"
-                            name="name"
-                            onChange={(e) => setName(e.target.value)}
+                            name="title"
+                            onChange={(e) => setTitle(e.target.value)}
                           />
                         </div>
 
@@ -88,6 +83,17 @@ const ProjectCreationPage = (props) => {
                             placeholder="Опишите проект"
                             name="description"
                             onChange={(e) => setDescription(e.target.value)}
+                          />
+                        </div>
+
+                        <div className="form-group">
+                          <label>Описание проекта</label>
+                          <input
+                            type="number"
+                            className="form-control"
+                            placeholder="Сколько необходимо на реализацию проекта?"
+                            name="totalSum"
+                            onChange={(e) => setTotalSum(e.target.value)}
                           />
                         </div>
 

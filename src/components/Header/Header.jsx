@@ -16,6 +16,16 @@ function Header() {
                       <span>Login</span>
                     </Link>
                 </div>
+                <div className='sign-up-wrapper'>
+                    <Link to='/create-project'>
+                        <span>Create Project</span>
+                    </Link>
+                </div>
+                <div>
+                    <Link to='/projects'>
+                        <div>PROJECTS</div>
+                    </Link>
+                </div>
         </header>
     );
 }
