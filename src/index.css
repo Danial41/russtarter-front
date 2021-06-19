@@ -131,7 +131,7 @@ label {
   margin-bottom: 7px;
 }
 
-input[type="text"], input[type="email"], input[type="number"]
+input[type="text"], input[type="email"], input[type="number"], input[type="password"]
 {
     font-size:24px;
 }

@@ -106,7 +106,7 @@ class SignUp extends Component {
             <div className="form-group">
               <label>Пароль:</label>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 placeholder="Пароль"
                 name="password"
@@ -118,7 +118,7 @@ class SignUp extends Component {
             <div className="form-group">
               <label>Подтвердите Пароль:</label>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 placeholder="Подтверждение Пароля"
                 name="password_confirmation"
