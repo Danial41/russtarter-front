@@ -9,6 +9,7 @@ import ProjectCreationPage from "./pages/ProjectCreationPage/projectCreation";
 import UserEditPage from './pages/UserEdit/userEdit';
 import ProjectsPage from './pages/ProjectsPage/projectsPage';
 import SingleProjectPage from './pages/SingleProjectPage/singleProjectPage';
+import ProfilePage from "./pages/ProfilePage/profilePage";
 
 function App(props) {
   return (
@@ -20,6 +21,7 @@ function App(props) {
           <Route exact path='/edit' component={UserEditPage} />
           <Route exact path='/projects' component={ProjectsPage} />
           <Route exact path='/projects/:id' component={SingleProjectPage} {...props} />
+          <Route exact path='/profile/:id' component={ProfilePage} />
       </div>
   );
 }
