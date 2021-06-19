@@ -5,10 +5,9 @@ import { connect } from "react-redux";
 import {URL} from '../../utils/url.helper'
 
 import JoinTeam from '../../components/JoinTeam/joinTeam';
+import Participants from '../../components/Participants/participants';
 
 const SingleProjectPage = (props) => {
-
-    console.log(props);
 
     const [project, setProject] = useState([])
 
@@ -26,8 +25,6 @@ const SingleProjectPage = (props) => {
             .catch(err => console.log(err))
     }, [])
 
-    
-
     return (
         <div>
             <img src={project.image} />
@@ -35,6 +32,7 @@ const SingleProjectPage = (props) => {
             <div>Описание: {project.description}</div>
             <div>Cумма для сбора: {project.total_sum}</div>
             <JoinTeam {...props} />
+            <Participants {...props} />
         </div>
     )
 }

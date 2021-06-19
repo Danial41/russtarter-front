@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
 
-import { URL } from '../../utils/url.helper'
+import { URL } from '../../utils/url.helper';
 
-const Participants = () => {
+import PendingUserCard from '../PendingUserCard/pendingUserCard'
 
-    fetch(`${URL}/`)
-        .then()
-        .then()
+const Participants = (props) => {
+
+    const [participants, setParticipants] = useState([])
+
+    fetch(`${URL}/pending_participants/${props.match.params.id}`, {
+        headers: {
+            Authorization: 'Bearer ' + props.user.token
+        }
+    })
+        .then(resp => resp.json())
+        .then(data => console.log(data))
 
     return (
         <div>
-
+            {participants.map((item) => {
+                return <PendingUserCard username={item.user.username} image={item.user.image} status={item.status} />
+            })}
         </div>
     )
 };
 
 const mapStateToProps = (state) => ({ user: state.user.currentUser });
 
-export default connect(mapStateToProps)(UserEditPage);
+export default connect(mapStateToProps)(Participants);
