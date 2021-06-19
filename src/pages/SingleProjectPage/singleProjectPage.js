@@ -34,7 +34,7 @@ const SingleProjectPage = (props) => {
             <div>Название: {project.title}</div>
             <div>Описание: {project.description}</div>
             <div>Cумма для сбора: {project.total_sum}</div>
-            <JoinTeam />
+            <JoinTeam {...props} />
         </div>
     )
 }

@@ -4,6 +4,8 @@ import { URL } from '../../utils/url.helper';
 
 const JoinTeam = (props) => {
 
+    console.log(props.match.params.id);
+
     const senRequest = () => {
         fetch(`${URL}/join_team/${props.match.params.id}`, {
             method: 'POST',
@@ -18,7 +20,7 @@ const JoinTeam = (props) => {
 
     return (
         <div>
-            <button>Join The Team</button>
+            <button onClick={senRequest}>Join The Team</button>
         </div>
     )
 }

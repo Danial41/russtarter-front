@@ -21,7 +21,7 @@ function App(props) {
           <Route exact path='/edit' component={UserEditPage} />
           <Route exact path='/projects' component={ProjectsPage} />
           <Route exact path='/projects/:id' component={SingleProjectPage} {...props} />
-          <Route exact path='/profile/:id' component={ProfilePage} />
+          <Route exact path='/profile' component={ProfilePage} />
       </div>
   );
 }

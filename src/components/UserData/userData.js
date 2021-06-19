@@ -2,10 +2,12 @@ import React from 'react'
 
 import {connect} from 'react-redux'
 
+import { Link } from "react-router-dom";
+
 import lvlPic from '../../assets/pictures/lvl.png'
 
 const Userdata = (props) => {
-    console.log(props);
+    
     return (
         <div className='user-profile'>
             <div className='avatar-and-fio'>
@@ -13,7 +15,9 @@ const Userdata = (props) => {
                 <div className='fio'>{props.user.user.username.split(" ").map(word => <div>{word}</div>)}</div>
             </div>
             <img id='lvl' src={lvlPic} />
-            <button id='edit-btn'>Редактировать</button>
+            <Link to='/edit'>
+                <button id='edit-btn'>Редактировать</button>
+            </Link>
             <div className='charachteristics'>
                 <h2>Базовые Характеристики</h2>
                 <h3>Профессиональные навыки</h3>

@@ -25,6 +25,9 @@ function Header() {
                     <Link to='/projects'>
                         <div>PROJECTS</div>
                     </Link>
+                    <Link to='/profile'>
+                        <div>PROFILE</div>
+                    </Link>
                 </div>
         </header>
     );
