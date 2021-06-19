@@ -39,7 +39,7 @@ a {
 }
 
 img {
-  width: 100%;
+  width: 50%;
 }
 
 .btm-nav {
@@ -60,8 +60,8 @@ img {
   left: 8%;
 }
 
-#user-pic {
-  width: 50%;
+.user-pic {
+  width: 50% !important;
   border-radius: 50%;
 }
 

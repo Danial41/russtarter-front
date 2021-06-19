@@ -56,7 +56,7 @@ class SignUp extends Component {
           });
           setTimeout(() => {
             this.setState({ warning: "" });
-            this.props.history.push(`/profile/${data.user.id}`);
+            this.props.history.push(`/profile`);
           }, 1000);
         }
       })
