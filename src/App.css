@@ -1,0 +1,23 @@
+a{
+    display: inline-block;
+    text-decoration: none;
+    color:grey;
+}
+ul,
+li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.app-wrapper{
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 8fr 4fr;
+    grid-template-areas: "h h" "c m";
+    grid-gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.app-wrapper__content{
+    grid-area: c;
+}
