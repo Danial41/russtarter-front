@@ -42,6 +42,39 @@ a {
   text-decoration: none; /* no underline */
 }
 
+a span, div {
+  color: black;
+}
+
+input[type="image" i] {
+  margin: 15px 0;
+}
+
+#pending-user-pic {
+  width: 100px;
+  height: 100px;
+  margin: 10px 0;
+}
+
+.user-pending-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-pending {
+  margin: 0 5px;
+}
+
+.sign-up-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+}
+
 img {
   width: 50%;
 }

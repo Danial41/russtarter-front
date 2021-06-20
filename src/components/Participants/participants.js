@@ -16,10 +16,12 @@ const Participants = (props) => {
         }
     })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => {
+            setParticipants(data.data)
+        })
 
     return (
-        <div>
+        <div className='user-pending-wrapper'>
             {participants.map((item) => {
                 return <PendingUserCard username={item.user.username} image={item.user.image} status={item.status} />
             })}

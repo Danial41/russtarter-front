@@ -2,10 +2,10 @@ import React from 'react';
 
 const PendingUserCard = (props) => {
     return (
-        <div>
-            <div>{props.username}</div>
-            <div>{props.image}</div>
-            <div>{props.status}</div>
+        <div className='user-pending'>
+            <div>Имя: {props.username}</div>
+            <img id="pending-user-pic" src={props.image} />
+            <div>Статус: {props.status}</div>
         </div>
     )
 }

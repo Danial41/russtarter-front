@@ -31,6 +31,17 @@ const SingleProjectPage = (props) => {
             <div>Название: {project.title}</div>
             <div>Описание: {project.description}</div>
             <div>Cумма для сбора: {project.total_sum}</div>
+
+            <form action="https://www.coinpayments.net/index.php" method="post" target="_top" id='payment'>
+	            <input type="hidden" name="cmd" value="_pay_simple" />
+	            <input type="hidden" name="reset" value="1" />
+	            <input type="hidden" name="merchant" value="ec9c98b27ac5728fba41bf5b0f63cb11" />
+	            <input type="hidden" name="currency" value="LTC" />
+	            <input type="hidden" name="amountf" value="1.00" />
+	            <input type="hidden" name="item_name" value="Test Item" />
+	            <input type="image" src="https://www.coinpayments.net/images/pub/buynow-grey.png" alt="Купить используя CoinPayments.net" />
+            </form>
+
             <JoinTeam {...props} />
             <Participants {...props} />
         </div>

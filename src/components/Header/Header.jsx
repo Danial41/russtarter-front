@@ -23,7 +23,7 @@ function Header() {
                         <span>Create Project</span>
                     </Link>
                 </div>
-                <div>
+                <div id='projects'>
                     <Link to='/projects'>
                         <div>PROJECTS</div>
                     </Link>
