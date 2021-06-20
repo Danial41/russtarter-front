@@ -91,7 +91,7 @@
 ## Демо
 Проект размещён на сервисе Netlify.
 
-[Демо - ](https://tender-bose-606bf0.netlify.app/) :point_left:
+[Демо - ](https://eloquent-liskov-60da21.netlify.app/#/) :point_left:
 
 <!-- CONTACT -->
 ## Contributors
