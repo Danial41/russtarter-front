@@ -11,10 +11,9 @@ const MainPage = () => {
         <div>
             <section className="app-wrapper__content">
               <img src={banner} />
-              <h1>Начните зарабатывать сегодня
-                  НА БЛОКЧЕЙН-БАНКИНГЕ</h1>
+              <h1>Получите кредит или инвестиции на свой проект прямо сегодня! или Дайте деньги в крудит или проинвестируйте в проверенные проекты!</h1>
               <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                Социальная сеть с рейтингом пользователей на основе источников информации о финансовом состоянии, об экономической деятельности и других источников информации, на примере соц сетей. С возможностью объединения в проекты с целью получения инвестиций или кредитов, или инвестирования и кредитования.
               </p>
               <Users />
             </section>
