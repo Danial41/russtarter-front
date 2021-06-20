@@ -2,12 +2,14 @@ import styles from "./Header.module.css";
 
 import { Link } from "react-router-dom";
 
+import Logo from '../../assets/pictures/logo.jpg'
+
 function Header() {
     return (
         <header className={styles.header}>
-            <a href="#">
-                <img src="" alt="Logo"/>
-            </a>
+            <Link to='/'>
+                <img id='logo-pic' src={Logo} alt="Logo"/>
+            </Link>
                 <div className='sign-up-wrapper'>
                     <Link to='/sign-up'>
                       <span>SignUp</span>

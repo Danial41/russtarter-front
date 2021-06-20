@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useReducer} from "react";
 
 import { URL } from "../../utils/url.helper";
 
 import { connect } from "react-redux";
 
+import PersonalData from "../../components/personalData/personaldata";
+
 const UserEditPage = (props) => {
   const token = "c63a5276874a8e4e68583996b0a2d68444d29e78";
 
   const [warning, setWarning] = useState();
+
+  const [result, setResult] = useState([]);
 
   const [allValues, setAllValues] = useState({
     first_name: "",
@@ -28,11 +32,6 @@ const UserEditPage = (props) => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value });
   };
 
-  const handleChange = (event) => {
-    const { value } = event.target;
-    setAllValues({ ...allValues, charachteristics: event.target.value });
-  };
-
   const createProjectHandler = (e) => {
     e.preventDefault();
 
@@ -40,8 +39,6 @@ const UserEditPage = (props) => {
     query = query.concat(" ", allValues.first_name);
     query = query.concat(" ", allValues.patronymic);
     query = query.concat(" ", allValues.snils);
-
-    console.log(query);
 
     const formData = new FormData();
     if (allValues.first_name)
@@ -69,8 +66,7 @@ const UserEditPage = (props) => {
         if (data.message) {
           setWarning(data.message);
         } else {
-          console.log("success");
-          props.history.push("./profile");
+          // props.history.push("./profile");
           if (allValues.first_name) {
             fetch(
               "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party",
@@ -86,7 +82,10 @@ const UserEditPage = (props) => {
               }
             )
               .then((resp) => resp.json())
-              .then((data) => console.log(data));
+              .then((data) => {
+                setResult(data.suggestions)
+                console.log(data.suggestions);
+              });
           }
         }
       })
@@ -217,6 +216,11 @@ const UserEditPage = (props) => {
               Создать
             </button>
           </form>
+        </div>
+        <div id="result">
+          {result.map((item, index) => {
+              return <PersonalData name={item.value} key={index} address={item.data.address.value} />
+          })}
         </div>
       </div>
     </div>

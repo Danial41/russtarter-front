@@ -25,6 +25,10 @@ a {
   z-index: 1;
 }
 
+#logo-pic {
+  width: 10%;
+}
+
 .btm-nav {
   display: flex;
   justify-content: space-around;
