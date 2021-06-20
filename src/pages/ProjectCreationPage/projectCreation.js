@@ -13,8 +13,6 @@ const ProjectCreationPage = (props) => {
     const [warning, setWarning] = useState();
     const [totalSum, setTotalSum] = useState();
 
-    console.log(image);
-
     const createProjectHandler = (e) => {
         e.preventDefault()
 
@@ -40,10 +38,6 @@ const ProjectCreationPage = (props) => {
           }
         })
         .catch(err => console.log(err));
-    }
-
-    const clearFields = () => {
-        setImage();
     }
 
     const onImageChange = event => {

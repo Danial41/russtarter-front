@@ -66,7 +66,6 @@ const UserEditPage = (props) => {
         if (data.message) {
           setWarning(data.message);
         } else {
-          // props.history.push("./profile");
           if (allValues.first_name) {
             fetch(
               "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party",
@@ -84,7 +83,6 @@ const UserEditPage = (props) => {
               .then((resp) => resp.json())
               .then((data) => {
                 setResult(data.suggestions)
-                console.log(data.suggestions);
               });
           }
         }
